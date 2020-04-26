@@ -23,7 +23,11 @@
     {{ if (isset $.Site.Data.resume "contact") }}
     <ul class="contact">
       {{ range $.Site.Data.resume.contact.list }}
-        <li><a href="{{ .url }}">{{ .title }}</a></li>
+      <li>
+        <a href="{{ .url }}">
+          <span class="{{ .icon }} icon"></span>{{ .title }}
+        </a>
+      </li>
       {{ end }}
     </ul>
     {{ end }}
@@ -69,7 +73,14 @@
     <h3>Skills</h3>
     <ul class="skill">
       {{ range $.Site.Data.resume.skill.list }}
-        <li> {{ .name }} : {{ .level }}% </li>
+        <li>
+          <div class="skill-wrapper">
+            {{ .name }}
+            <div class="percent-bar">
+              <div class="percent" style="width:{{ .level }}%" />
+            </div>
+          </div>
+        </li>
       {{ end }}
     </ul>
     {{ end }}

@@ -1,5 +1,5 @@
 .resume {
-  font-family: $family-sans-serif !important;
+  font-family: $family-roboto !important;
 
   & h2 {
     text-align: center;
@@ -15,6 +15,28 @@
 
   & ul.contact li {
     list-style-type: none;
+
+    & .icon {
+      padding-right: 0.3em;
+    }
+  }
+
+  & ul.skill {
+    display: inline;
+    text-align: left;
+  }
+
+  & ul.skill li {
+    list-style-type: none;
+  }
+
+  & ul.skill li .skill-wrapper {
+    text-align: left;
+    padding: 5px 0px;
+  }
+
+  & ul.skill li .skill-wrapper .inner {
+    margin: 0 auto;
   }
 
   & h3 {
@@ -53,6 +75,21 @@
   & .company {
     color: $text-light;
     font-size: 0.8em;
+  }
+
+  & .percent-bar {
+    height: 5px;
+    background-color: $grey-lighter;
+    width: 100%;
+
+    & .percent {
+      height: 100%;
+      background-color: $green;
+    }
+
+    @media print {
+      background-color: $grey-darker;
+    }
   }
 
   @media print, screen and (max-width: $tablet) {
